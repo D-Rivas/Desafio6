@@ -27,7 +27,16 @@ async function convertir() {
         const valorActual = indicador.serie[0].valor;
         const resultado = (monto / valorActual).toFixed(2);
 
-        document.getElementById('resultado').textContent = `Resultado: $${resultado}`;
+        let simbolo = '';
+
+        if (moneda === 'dolar') {
+            simbolo = '$';
+        } else if (moneda === 'euro') {
+            simbolo = '€';
+        }
+
+
+        document.getElementById('resultado').textContent = `Resultado: ${simbolo}${resultado}`;
 
         const ultimos10 = indicador.serie.slice(0, 10).reverse();
         const labels = ultimos10.map(d => new Date(d.fecha).toLocaleDateString());
