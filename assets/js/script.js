@@ -1,5 +1,5 @@
 const ctx = document.getElementById('myChart').getContext('2d');
-let chart; // Gráfico global
+let chart;
 
 async function fetchData(moneda) {
     try {
@@ -90,7 +90,6 @@ const montoInput = document.getElementById('monto');
 const monedaSelect = document.getElementById('moneda');
 const buscarBtn = document.getElementById('buscarBtn');
 
-// Escuchamos cambios en los inputs
 montoInput.addEventListener('input', validarFormulario);
 monedaSelect.addEventListener('change', validarFormulario);
 
